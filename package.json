@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sudarshan955/learing-webpack/issues"
   },
-  "homepage": "https://github.com/sudarshan955/learing-webpack#readme"
+  "homepage": "https://github.com/sudarshan955/learing-webpack#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.29.0"
+  }
 }
