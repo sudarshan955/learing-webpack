@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "start": "webpack-dev-server",
+    "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,18 @@
   },
   "homepage": "https://github.com/sudarshan955/learing-webpack#readme",
   "devDependencies": {
-    "html-webpack-plugin": "^2.29.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^2.30.1",
+    "node-libs-browser": "^2.1.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^3.12.0",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "react": "^16.3.2"
   }
 }
