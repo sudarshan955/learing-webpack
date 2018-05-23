@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require( 'webpack' );
 var merge = require('webpack-merge');
 
@@ -12,7 +12,7 @@ const PATHS = {
 var common = {
 
     entry: {
-        app: PATHS.app
+        app: path.resolve( PATHS.app, 'main.jsx' )
     },
 
     output: {
@@ -32,10 +32,11 @@ var common = {
 if ( TARGET === 'start' || !TARGET ) {
     module.exports = merge( common, {
         //devtool: 'eval-source-map',
-        devtool: 'eval',
+        //devtool: 'eval',
+        devtool: false,
 
         module: {
-            loaders: [
+            /*loaders: [
 
                 {
                     test: /\.css$/,
@@ -48,6 +49,25 @@ if ( TARGET === 'start' || !TARGET ) {
                     loaders: [ 'babel-loader' ],
                     include: PATHS.app
                 }
+            ]*/
+            rules: [
+                {
+                    //test: /\.js$/,
+                    test: /\.jsx?$/,
+                    //exclude: /(node_modules|bower_components)/,
+                    include: PATHS.app,
+                    use: {
+                        loader: 'babel-loader',
+                    }
+                },
+            ]
+
+        },
+
+        resolve: {
+            extensions: [ '.js', '.jsx', '.css'],
+            modules: [
+                "node_modules"
             ]
         },
 
